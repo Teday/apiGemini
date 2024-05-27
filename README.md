@@ -1,1 +1,6 @@
-# apiGemini
+## Learn Gemini AI API
+## How To Install??????????
+
+- first clone.
+- npm install.
+- npm run start.
