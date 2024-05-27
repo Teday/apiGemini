@@ -4,7 +4,7 @@ dotenv.config()
 
 const configuration = new GoogleGenerativeAI(process.env.API_KEY || "")
 
-const modelId = "gemini-pro";
+const modelId = "gemini-1.5-flash";
 const model = configuration.getGenerativeModel({model: modelId});
 
 const generateResponse = async (req: any, res: any) => {
@@ -18,9 +18,7 @@ const generateResponse = async (req: any, res: any) => {
         })
 
         const result = await chat.sendMessage(prompt);
-        const response = await result.response;
-        const responseText = response.text();
-        console.log("respon =", response.text())
+        const responseText = result.response.text();
 
         res.send(responseText)
     } catch (error) {
